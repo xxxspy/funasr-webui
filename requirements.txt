@@ -1,0 +1,4 @@
+audio-separator[gpu]
+funasr
+modelscope 
+huggingface_hub

@@ -172,3 +172,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+outputs/
+models/
+py312cuda124/
+tmp/
+*.zip
