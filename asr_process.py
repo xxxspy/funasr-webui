@@ -85,16 +85,19 @@ def transcribe(audio, output_folder, model_dir='iic/SenseVoiceSmall', language="
 
 def format_timestamp(milliseconds: float, always_include_hours: bool = False, decimal_marker: str = "."):
     assert milliseconds >= 0, "non-negative timestamp expected"
+    print(type(milliseconds))
     hours = milliseconds // 3_600_000
     milliseconds -= hours * 3_600_000
     minutes = milliseconds // 60_000
     milliseconds -= minutes * 60_000
     seconds = milliseconds // 1_000
     milliseconds -= seconds * 1_000
-    return (
-        f"{hours:02d}:" if always_include_hours or hours > 0 else ""
-        f"{minutes:02d}:{seconds:02d}{decimal_marker}{milliseconds:03d}"
-    )
+    if always_include_hours or hours > 0:
+        rtn = f"{hours:02d}:" 
+    else:
+        "" 
+    rtn += f"{minutes:02d}:{seconds:02d}{decimal_marker}{milliseconds:03d}"
+    return rtn
 
 def srt_format(sents):
     srt = ''
