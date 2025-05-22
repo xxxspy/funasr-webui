@@ -5,14 +5,6 @@ A gradio webui for FunAsr
 
 # Install
 
-- Requirements
-
-```bash
-python>=3.8
-torch>=1.13
-torchaudio
-```
-
 - Install
 
 ```bash
